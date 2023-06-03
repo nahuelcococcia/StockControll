@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block "content" %}
+
+  <h2>Listado de Productos</h2>
+  <a href="{% url 'agregar_producto'  %}" class="btn btn-primary">Agregar Producto</a>
+  <table class="table .table-sm text-center" >
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock Actual</th>
+            <th scope="col">Proveedor</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for producto in productos %}
+        <tr class="align-middle">
+            <th class="py-3" >{{ producto.nombre }}</th>
+            <td class="py-3" >{{ producto.precio }}</td>
+            <td class="py-3" >{{ producto.stock_actual }}</td>
+            <td class="py-3" >{{ producto.proveedor }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    
+    
+
+  {% endblock %}  
+  
+      
